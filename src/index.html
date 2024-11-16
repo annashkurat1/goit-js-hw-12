@@ -2,22 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:regular,500,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./img/icons8-google-поиск.svg"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>goit-hw-12</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
 
+  <body>
     <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
+      <form action="submit" class="js-search-form search-form">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search images..."
+          autofocus
+          class="submit-input"
+        />
+        <button type="submit" class="button-search">Search</button>
+      </form>
+      <ul class="js-gallery gallery"></ul>
+
+      <span class="loader loader-on">Loading images, please wait...</span>
+
+      <div class="button-box">
+        <button type="button" class="load-more load-more-hidden">
+          Load more
+        </button>
+      </div>
     </main>
 
-    <load src="./partials/footer.html" />
-
+    <script type="module" src="./js/pixabay-api.js"></script>
+    <script type="module" src="./js/render-functions.js"></script>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
